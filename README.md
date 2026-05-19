@@ -52,8 +52,17 @@ npm test
 npm run lint
 ```
 
+
 ## database changes 
 
 This database feature use enviroment values like `DB_HOST`, `DB_PORT`, and `DB_NAME`.
 Database name is set to `mudincercheckpont2` for this project.
 For this check point, database system use simple memory stub for easy setup.
+
+## API Feature
+
+this API feature have GET and POST endpoint
+route `/api/health` check if server is working good
+rroute `/api/info` show project information for mudincer system
+route `/api/echo` take POST request and check message data before send back
+

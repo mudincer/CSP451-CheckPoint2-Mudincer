@@ -46,8 +46,18 @@ function getClient() {
   };
 }
 
+function getDatabaseStatus() {
+  return {
+    connected,
+    database: config.database,
+    message: connected ? "Database connection is active." : "Database is offline.",
+  };
+}
+
+
 module.exports = {
   connect,
   query,
   getClient,
+  getDatabaseStatus,
 };

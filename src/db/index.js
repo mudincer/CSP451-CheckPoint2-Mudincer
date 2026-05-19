@@ -1,20 +1,53 @@
 /**
- * Database module (starter stub).
- *
- * Feature branch: feature/database-connection should implement:
- * - connect()
- * - a config pattern using environment variables
- * - a simple query function OR a client getter
- *
- * You may use:
- * - a "fake" in-memory database for the checkpoint, OR
- * - SQLite, OR
- * - MongoDB/Postgres (optional) — keep setup simple
+ * Database module
+ * CSP451 CheckPoint 2
+ * mudincer
  */
 
+const config = {
+  host: process.env.DB_HOST || "localhost",
+  port: process.env.DB_PORT || 3000,
+  database: process.env.DB_NAME || "mudincercheckpont2",
+};
+
+let connected = false;
+
 function connect() {
-  // Placeholder: simulate a successful connection
-  return { connected: true, driver: "stub" };
+  connected = true;
+
+  console.log(
+    `Connected to database ${config.database} at ${config.host}:${config.port}`
+  );
+
+  return {
+    connected,
+    driver: "in-memory-stub",
+    config,
+  };
 }
 
-module.exports = { connect };
+function query(sql) {
+  if (!connected) {
+    throw new Error("Database is not connected.");
+  }
+
+  console.log(`Executing query: ${sql}`);
+
+  return {
+    success: true,
+    rows: [],
+  };
+}
+
+function getClient() {
+  return {
+    connected,
+    config,
+  };
+}
+
+module.exports = {
+  connect,
+  query,
+  getClient,
+};

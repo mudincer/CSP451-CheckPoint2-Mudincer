@@ -51,3 +51,9 @@ To intentionally create a merge conflict, edit the same lines in one of:
 npm test
 npm run lint
 ```
+## API Feature
+
+this API feature have GET and POST endpoint
+route `/api/health` check if server is working good
+rroute `/api/info` show project information for mudincer system
+route `/api/echo` take POST request and check message data before send back

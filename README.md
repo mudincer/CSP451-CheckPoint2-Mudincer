@@ -51,3 +51,9 @@ To intentionally create a merge conflict, edit the same lines in one of:
 npm test
 npm run lint
 ```
+
+## database changes 
+
+This database feature use enviroment values like `DB_HOST`, `DB_PORT`, and `DB_NAME`.
+Database name is set to `mudincercheckpont2` for this project.
+For this check point, database system use simple memory stub for easy setup.

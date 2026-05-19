@@ -69,3 +69,5 @@ form.addEventListener("submit", async (e) => {
     setMessage("Network error. Please try again.", "error");
   }
 });
+
+console.log("Authentication module loaded successfully.");

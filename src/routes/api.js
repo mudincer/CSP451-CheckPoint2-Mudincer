@@ -30,6 +30,7 @@ router.get("/health", (req, res) => {
 });
 
 router.get("/info", (req, res) => {
+  console.log("GET /api/info called");
   res.json({
     project: "CSP451 CheckPoint 2",
     owner: "mudincer",
@@ -38,6 +39,7 @@ router.get("/info", (req, res) => {
 });
 
 router.post("/echo", (req, res) => {
+  console.log("POST /api/echo called");
   const errors = validateEchoPayload(req.body);
 
   if (errors.length > 0) {

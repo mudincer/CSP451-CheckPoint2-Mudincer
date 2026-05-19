@@ -53,7 +53,7 @@ npm run lint
 ```
 
 
-## database changes 
+## database changes  
 
 This database feature use enviroment values like `DB_HOST`, `DB_PORT`, and `DB_NAME`.
 Database name is set to `mudincercheckpont2` for this project.
